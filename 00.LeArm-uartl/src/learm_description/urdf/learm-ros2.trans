@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot name="learm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <transmission name="Joint1_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Arm_Joint1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint1_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Joint2_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Arm_Joint2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint2_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Joint3_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Arm_Joint3">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint3_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Joint4_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Arm_Joint4">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint4_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Joint5_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Arm_Joint5">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint5_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Joint6_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Grip_Joint">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Joint6_actr">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

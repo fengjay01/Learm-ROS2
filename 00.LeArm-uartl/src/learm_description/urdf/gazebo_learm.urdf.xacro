@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="claw_description">
+
+    <!-- 理论上是需要固定在world中的，但是在该模型中，一旦base_link固定在world上，整个机械臂会时不时的抖动 -->
+    <!-- Used for fixing robot to Gazebo 'base_link' 将机械手的基座固定在世界坐标上-->
+    <!-- <link name="world" />
+    <joint name="fixed" type="fixed">
+        <parent link="world" />
+        <child link="base_link" />
+    </joint> -->
+
+    <!-- Import learm_description urdf file -->
+    <xacro:include filename="$(find learm_description)/urdf/learm1.urdf" />
+    <!-- <xacro:include filename="$(find learm_description)/urdf/learm-ros2.trans" /> -->
+
+
+    <!-- 对一些link进行gazebo的属性设置 -->
+    <gazebo reference="base_link">
+        <material>Gazebo/Red</material>
+        <!-- 开自我碰撞检测，可以防抖运动停下后轻微的抖动 -->
+        <self_collide>false</self_collide>
+        <!-- base_link注释，运动停下后抖动 -->
+        <!-- <gravity>true</gravity> -->
+    </gazebo>
+    <gazebo reference="Arm_Link1">
+        <material>Gazebo/Purple</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="Arm_Link2">
+        <material>Gazebo/Red</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="Arm_Link3">
+        <material>Gazebo/Blue</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="Arm_Link4">
+        <material>Gazebo/Green</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="Arm_Link5">
+        <material>Gazebo/Yellow</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rlink1">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rlink2">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rlink3">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="llink1">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="llink2">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="llink3">
+        <material>Gazebo/Orange</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+
+    <!-- 声明ros2_control -->
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="Arm_Joint1">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="Arm_Joint2">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="Arm_Joint3">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="Arm_Joint4">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="Arm_Joint5">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="Grip_Joint">
+            <command_interface name="position">
+            </command_interface>
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+
+
+    <!-- 加载ros2_control插件 -->
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <parameters>$(find moveit_uartl)/config/ros2_controllers.yaml</parameters>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+            <robotParam>robot_description</robotParam>
+        </plugin>
+    </gazebo>
+
+</robot>

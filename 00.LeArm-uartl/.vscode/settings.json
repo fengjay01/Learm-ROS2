@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/china/LeArmRobot-V1-fix-gazebo/build/scripts",
+        "/home/china/LeArmRobot-V1-fix-gazebo/install/scripts/lib/python3.10/site-packages",
+        "/home/china/LeArmRobot-V1-fix-gazebo/build/learm_description",
+        "/home/china/LeArmRobot-V1-fix-gazebo/install/learm_description/lib/python3.10/site-packages",
+        "/home/china/Moveit_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/china/Moveit_ws/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/launch_param_builder/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/china/LeArmRobot-V1-fix-gazebo/build/scripts",
+        "/home/china/LeArmRobot-V1-fix-gazebo/install/scripts/lib/python3.10/site-packages",
+        "/home/china/LeArmRobot-V1-fix-gazebo/build/learm_description",
+        "/home/china/LeArmRobot-V1-fix-gazebo/install/learm_description/lib/python3.10/site-packages",
+        "/home/china/Moveit_ws/install/moveit_task_constructor_core/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/home/china/Moveit_ws/install/srdfdom/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/moveit_task_constructor_msgs/local/lib/python3.10/dist-packages",
+        "/home/china/Moveit_ws/install/launch_param_builder/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "cmake.sourceDirectory": "/home/china/LeArmRobot-V1-fix-gazebo/src/learm_moveit_config"
+}

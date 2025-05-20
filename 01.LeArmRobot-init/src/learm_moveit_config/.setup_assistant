@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: learm_description
+    relative_path: urdf/learm.urdf
+  srdf:
+    relative_path: config/learm.srdf
+  package_settings:
+    author_name: VDAIL_PYX
+    author_email: pyx@qq.com
+    generated_timestamp: 1741915006
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

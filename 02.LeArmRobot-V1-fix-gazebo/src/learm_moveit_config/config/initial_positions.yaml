@@ -1,0 +1,9 @@
+# Default initial positions for learm's ros2_control fake system
+
+initial_positions:
+  Arm_Joint1: 0
+  Arm_Joint2: 0
+  Arm_Joint3: 0
+  Arm_Joint4: 0
+  Arm_Joint5: 0
+  Grip_Joint: 0

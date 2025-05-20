@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="claw_description">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import claw_description urdf file -->
+    <xacro:include filename="$(find learm_description)/urdf/gazebo_learm.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="claw_description.ros2_control.xacro" />
+
+
+    <xacro:claw_description_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>
